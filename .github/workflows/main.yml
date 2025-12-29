@@ -27,10 +27,17 @@ jobs:
     #   run: |
     #     curl -s https://deb.nodesource.com/setup_16.x | sudo bash
     #     sudo apt install nodejs -y
-    
+
+    - name: Cache
+      uses: actions/cache@v5.0.1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        
+        
     - name: Install Dependancies
       run: npm install
-
+    
     - name: Build
       run: npm run build
 
