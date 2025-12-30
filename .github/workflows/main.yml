@@ -6,6 +6,11 @@ on: push
 jobs:
   build:
     uses: thejitenderk/reusable-workflow/.github/workflows/practice.yml@main
+    with:
+      image_name: macos-latest
+      stepname: santosh ji ka pipeline
+      environment: production
+      
 
   
   # demo:
