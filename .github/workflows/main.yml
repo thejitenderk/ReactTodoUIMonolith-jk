@@ -11,18 +11,20 @@ on:
     - main
 
 env:
-  name: sumit
-  VAR: latest
+  app: todo
+  managedby: ${{ github.actor }}
 
+
+  
 jobs:
   demo:
     name: Demo Job
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout ${{ env.name }}
+    - name: Checkout ${{ env.app }}
       uses: actions/checkout@v6.0.1
 
-    - name: Setup Node.js environment ${{ env.name }}
+    - name: Setup Node.js environment ${{ env.managedby }}
       uses: actions/setup-node@v6.1.0
       with:
         node-version: 16.x
