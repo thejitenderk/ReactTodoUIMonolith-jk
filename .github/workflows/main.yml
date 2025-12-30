@@ -10,16 +10,18 @@ on:
     branches:
     - main
 
+env:
+  name: sumit
 
 jobs:
   demo:
     name: Demo Job
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout ${{ env.name }}
       uses: actions/checkout@v6.0.1
 
-    - name: Setup Node.js environment
+    - name: Setup Node.js environment $name
       uses: actions/setup-node@v6.1.0
       with:
         node-version: 16.x
