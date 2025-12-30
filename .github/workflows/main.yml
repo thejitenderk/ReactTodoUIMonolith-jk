@@ -12,6 +12,7 @@ on:
 
 env:
   name: sumit
+  VAR: latest
 
 jobs:
   demo:
@@ -21,7 +22,7 @@ jobs:
     - name: Checkout ${{ env.name }}
       uses: actions/checkout@v6.0.1
 
-    - name: Setup Node.js environment ${{ env.name }}
+    - name: Setup Node.js environment $VAR
       uses: actions/setup-node@v6.1.0
       with:
         node-version: 16.x
