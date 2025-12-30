@@ -1,4 +1,4 @@
-ndname: Application DemoWork Flow
+name: Application DemoWork Flow
 run-name: Deploy by @${{ github.actor }}
 
 on:
@@ -10,21 +10,16 @@ on:
     branches:
     - main
 
-env:
-  app: todo
-  managedby: ${{ github.actor }}
-
-
   
 jobs:
   demo:
     name: Demo Job
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout ${{env.second}}
+    - name: Checkout ${{ env.second }}
       uses: actions/checkout@v6.0.1
 
-    - name: Setup Node.js environment ${{ env.managedby }}
+    - name: Setup Node.js environment
       uses: actions/setup-node@v6.1.0
       with:
         node-version: 16.x
