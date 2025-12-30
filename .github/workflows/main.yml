@@ -1,4 +1,5 @@
 name: Application DemoWork Flow
+run-name: Deploy by @${{ github.actor }}
 
 on:
   push:
@@ -23,23 +24,23 @@ jobs:
       with:
         node-version: 16.x
         
-    - name: Cache
-      uses: actions/cache@v5.0.1
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    # - name: Cache
+    #   uses: actions/cache@v5.0.1
+    #   with:
+    #     path: node_modules
+    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         
         
-    - name: Install Dependancies
-      run: npm install
+    # - name: Install Dependancies
+    #   run: npm install
     
-    - name: Build
-      run: npm run build
+    # - name: Build
+    #   run: npm run build
 
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v6.0.0
-      with:
-        name: build-${{ GITHUB.RUN_ID }}
-        path: build
+    # - name: Upload a Build Artifact
+    #   uses: actions/upload-artifact@v6.0.0
+    #   with:
+    #     name: build-${{ GITHUB.RUN_ID }}
+    #     path: build
       
 
