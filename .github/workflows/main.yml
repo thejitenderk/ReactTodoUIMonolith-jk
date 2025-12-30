@@ -1,22 +1,19 @@
 name: Application DemoWork Flow
 run-name: Deploy by @${{ github.actor }}
 
-on:
-  push:
-    branches:
-    - main
-    - features/**
-  pull_request:
-    branches:
-    - main
-
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        default: dev
+        description: select the environment
   
 jobs:
   demo:
     name: Demo Job
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout ${{ vars.second }}
+    - name: Checkout ${{ vars.second }}-${{ inputs.environment }}
       uses: actions/checkout@v6.0.1
 
     - name: Setup Node.js environment
