@@ -5,7 +5,7 @@ on: push
   
 jobs:
   build:
-    uses: https://github.com/thejitenderk/reusable-workflow/.github/workflows/practice.yml@main
+    uses: thejitenderk/reusable-workflow/.github/workflows/practice.yml@main
 
   
   # demo:
