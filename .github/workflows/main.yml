@@ -19,7 +19,7 @@ jobs:
     name: Demo Job
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout ${{ vars.second }}-${{ inputs.environment }}
+    - name: Checkout ${{ vars.second }}-${{ inputs.logLevel }}
       uses: actions/checkout@v6.0.1
 
     - name: Setup Node.js environment
