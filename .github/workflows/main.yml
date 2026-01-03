@@ -8,6 +8,6 @@ jobs:
   node_build:
     uses: thejitenderk/reusable-workflow/.github/workflows/practice.yml@main
     with:
-      node_version: "16"
+      node_version: "16.x"
       build_command: "npm run build"
       artifact_path: "build"
